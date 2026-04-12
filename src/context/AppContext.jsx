@@ -8,7 +8,8 @@ export const AppContextProvider = ({children}) => {
 
 
     const contextValue = {
-        user
+        user,
+        setUser
     }
 
     return (
