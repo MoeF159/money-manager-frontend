@@ -11,6 +11,25 @@ const Signup = () => {
 
     const navigate = useNavigate();
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        //basic validation
+        if(!fullName.trim()){
+            setError("Please enter your full name");
+            return;
+        }
+        if(!password.trim()){
+            setError("Please enter your password");
+            return;
+        }
+        if(!email.trim()){
+            setError("Please enter valid email");
+            return;
+        }
+
+    }
+
 
     return (
         <div className="h-screen w-full relative flex items-center justify-center overflow-hidden">
@@ -26,7 +45,7 @@ const Signup = () => {
                         Start Tracking Your Finances Today With Money Manager!
                     </p>
 
-                    <form className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-4">
                         <div className="flex justify-center mb-6">
                             {/* Profile Picture Upload */}
                         </div>
