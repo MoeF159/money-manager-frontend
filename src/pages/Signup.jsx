@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets.js"; // Assuming you have an assets file for images
+import Input from "../components/Input.jsx";
 const Signup = () => {
 
     const [fullName, setFullName] = useState("");
@@ -24,6 +25,22 @@ const Signup = () => {
                     <p className="text-sm text-slate-700 text-center mb-8">
                         Start Tracking Your Finances Today With Money Manager!
                     </p>
+
+                    <form className="space-y-4">
+                        <div className="flex justify-center mb-6">
+                            {/* Profile Picture Upload */}
+                        </div>
+                        <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+                            <Input 
+                            value={fullName}
+                            onChange={(e) => setFullName(e.target.value)}
+                            label="Full Name"
+                            placeholder="Enter your full name"
+                            type="text"
+                            
+                            />
+                        </div>
+                    </form>
                 </div>
             </div>
         
