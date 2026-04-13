@@ -28,7 +28,7 @@ const Input = ({ label, value, onChange, placeholder, type, }) =>{
                 {showPassword ? (
                   <Eye 
                     size={20}
-                    className="text-blue-800"
+                    className="text-emerald-600"
                     onClick={toggleShowPassword}
                   />
                 ) : (
