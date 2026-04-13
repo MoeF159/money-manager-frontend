@@ -123,9 +123,7 @@ const Signup = () => {
                                     Signing up...
                                 </>
                             ) : (
-                                <>
                                     "SIGN UP"
-                                </>
                             )}
                         </button>
 
