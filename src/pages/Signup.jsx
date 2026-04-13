@@ -32,13 +32,30 @@ const Signup = () => {
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
                             <Input 
-                            value={fullName}
-                            onChange={(e) => setFullName(e.target.value)}
-                            label="Full Name"
-                            placeholder="Enter your full name"
-                            type="text"
-                            
+                                value={fullName}
+                                onChange={(e) => setFullName(e.target.value)}
+                                label="Full Name"
+                                placeholder="John Doe"
+                                type="text"
                             />
+
+                            <Input 
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                label="Email Address"
+                                placeholder="john@example.com"
+                                type="text"
+                            />
+
+                            <div className="col-span-2">
+                                <Input 
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    label="Password"
+                                    placeholder="* * * * * * *"
+                                    type="password"
+                                />
+                            </div>
                         </div>
                     </form>
                 </div>
