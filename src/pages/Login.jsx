@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets.js"; // Assuming you have an assets file for images
 import Input from "../components/Input.jsx";
@@ -7,6 +7,7 @@ import axiosConfig from "../util/axiosConfig.js"
 import { API_ENDPOINTS } from "../util/apiEndpoints.js";
 import toast from "react-hot-toast";
 import { LoaderCircle } from "lucide-react";
+import { AppContext } from "../context/AppContext.jsx";
 
 const Login = () => {
     
@@ -14,7 +15,7 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [error , setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-
+    const {setUser} = useContext(AppContext)
 
     const navigate = useNavigate();
 
@@ -42,8 +43,10 @@ const Login = () => {
                 email,
                 password
             })
-            if(response.status ===201){
-                toast.success("Profile Created Successfully");
+            const {token, user} = response.data;
+            if(token){
+                localStorage.setItem("token",token);
+                setUser(user);
                 navigate("/dashboard");
             }
         }catch(err){
