@@ -50,9 +50,13 @@ const Login = () => {
                 navigate("/dashboard");
             }
         }catch(err){
+            if(err.response && err.response.data.message){
+                setError(err.response.data.message);
+            }else{
+                setError(err.message);
+            }
             console.error("Something went wrong", err);
             toast.error("Something went wrong");
-            setError(err.response?.data?.message || "Login failed");
         }finally{
             setIsLoading(false);
         }
