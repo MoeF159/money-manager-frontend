@@ -100,7 +100,7 @@ const Login = () => {
 
                         <button
                             disabled={isLoading}
-                            className={`w-full py-3 text-lg font-medium bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors flex items-center justify center gap-2 ${isLoading ? 'opacity-60 cursor-not-allowed': ''}`}
+                            className={`w-full py-3 text-lg font-medium bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors flex items-center justify-center gap-2 ${isLoading ? 'opacity-60 cursor-not-allowed': ''}`}
                             type="submit"
                         >
                             {isLoading ? (
