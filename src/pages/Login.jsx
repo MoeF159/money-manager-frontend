@@ -51,6 +51,7 @@ const Login = () => {
             }
         }catch(err){
             console.error("Something went wrong", err);
+            toast.error("Something went wrong");
             setError(err.message);
         }finally{
             setIsLoading(false);
@@ -98,10 +99,15 @@ const Login = () => {
                         )}
 
                         <button
+                            disabled={isLoading}
                             className="w-full py-3 text-lg font-medium bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors"
                             type="submit"
                         >
-                            LOGIN
+                            {isLoading ? (
+                                <>
+                                    <LoaderCircle className="animate-spin w-5 h-5"/>
+                                </>
+                            ):("Login")}
                         </button>
 
                         <p className="text-sm text-slate-800 text-center mt-6">
