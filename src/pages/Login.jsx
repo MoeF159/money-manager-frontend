@@ -2,6 +2,11 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets.js"; // Assuming you have an assets file for images
 import Input from "../components/Input.jsx";
+import { validateEmail } from "../util/validation.js";
+import axiosConfig from "../util/axiosConfig.js"
+import { API_ENDPOINTS } from "../util/apiEndpoints.js";
+import toast from "react-hot-toast";
+import { LoaderCircle } from "lucide-react";
 
 const Login = () => {
     
