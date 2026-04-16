@@ -9,7 +9,15 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [error , setError] = useState("");
 
+
     const navigate = useNavigate();
+
+    const handleSubmit = async(e) =>{
+        e.preventDefault();
+        
+
+
+    }
 
     
     return (
@@ -26,7 +34,7 @@ const Login = () => {
                         Log in with your Email and Password!
                     </p>
 
-                    <form className="space-y-4">
+                    <form onSubmit={handleSubmit} className="space-y-4">
                         {/* Input Fields */}
 
                         <Input 
