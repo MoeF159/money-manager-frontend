@@ -52,7 +52,7 @@ const Login = () => {
         }catch(err){
             console.error("Something went wrong", err);
             toast.error("Something went wrong");
-            setError(err.message);
+            setError(err.response?.data?.message || "Login failed");
         }finally{
             setIsLoading(false);
         }
