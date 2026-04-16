@@ -21,6 +21,17 @@ const Login = () => {
     const handleSubmit = async(e) =>{
         e.preventDefault();
         
+        //basic validation
+        if(!validateEmail(email)){
+            setError("Please enter valid email");
+            setIsLoading(false);
+            return;
+        }
+        if(!password.trim()){
+            setError("Please enter your password");
+            setIsLoading(false);
+            return;
+        }
 
 
     }
