@@ -20,6 +20,7 @@ const Login = () => {
 
     const handleSubmit = async(e) =>{
         e.preventDefault();
+        setIsLoading(true);
         
         //basic validation
         if(!validateEmail(email)){
@@ -33,6 +34,24 @@ const Login = () => {
             return;
         }
 
+        setError("");
+
+        //Login API call
+        try{
+            const response = await axiosConfig.post(API_ENDPOINTS.LOGIN, {
+                email,
+                password
+            })
+            if(response.status ===201){
+                toast.success("Profile Created Successfully");
+                navigate("/dashboard");
+            }
+        }catch(err){
+            console.error("Something went wrong", err);
+            setError(err.message);
+        }finally{
+            setIsLoading(false);
+        }
 
     }
 
